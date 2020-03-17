@@ -19,7 +19,8 @@ function start_game(){
 
     let newDiv = document.createElement('div');
     newDiv.id = idd;
-    newDiv.setAttribute('onmousemove', `deleteDiv(${idd})`);
+    newDiv.setAttribute('onmousedown', `deleteDiv(${idd})`);
+    newDiv.setAttribute('ontouchstart', `deleteDiv(${idd})`);
     newDiv.style.width = Math.ceil((Math.random() * 90) + 60)  + "px";
     newDiv.style.height = newDiv.style.width;
     newDiv.style.backgroundRepeat = "no-repeat";
