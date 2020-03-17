@@ -2,7 +2,7 @@
 Simple web game
 
 <br>
-# Para jogar: https://brunoemanuelsj.github.io/Corona-game/
+Para jogar: https://brunoemanuelsj.github.io/Corona-game/
 <br>
 
 Clique no vírus para ele sumir.
