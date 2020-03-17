@@ -39,7 +39,7 @@ function start_game(){
     }
 
     if(tempoSpam < 800){
-        decrease = 50;
+        decrease = 40;
     }
 
     if(tempoSpam < 500){
