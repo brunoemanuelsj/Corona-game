@@ -19,7 +19,7 @@ function start_game(){
 
     let newDiv = document.createElement('div');
     newDiv.id = idd;
-    // newDiv.setAttribute('onclick', `deleteDiv(${idd})`);
+    newDiv.setAttribute('onmousedown', `deleteDiv(${idd})`);
     newDiv.style.width = Math.ceil((Math.random() * 90) + 60)  + "px";
     newDiv.style.height = newDiv.style.width;
     newDiv.style.backgroundRepeat = "no-repeat";
@@ -32,14 +32,14 @@ function start_game(){
     newDiv.style.position = "absolute";
     divsNoDisplay++;
     document.getElementById("screen").appendChild(newDiv);
-    document.getElementById(idd).addEventListener('mousedown', e => {
-        e.target.style.display = "none";
-        // element.parentNode.removeChild(element);
-        pontos++;
-        divsNoDisplay--;
-        document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
-        document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
-    });
+    // document.getElementById(idd).addEventListener('mousedown', e => {
+    //     e.target.style.display = "none";
+    //     // element.parentNode.removeChild(element);
+    //     pontos++;
+    //     divsNoDisplay--;
+    //     document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
+    //     document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
+    // });
     idd++;
 
     if(tempoSpam > 100){
@@ -84,15 +84,15 @@ function start_game(){
     }
 }
 
-// function deleteDiv(idds){
-//     let element = document.getElementById(idds);
-//     element.style.display = "none";
-//     // element.parentNode.removeChild(element);
-//     pontos++;
-//     divsNoDisplay--;
-//     document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
-//     document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
-// }
+function deleteDiv(idds){
+    let element = document.getElementById(idds);
+    element.style.display = "none";
+    // element.parentNode.removeChild(element);
+    pontos++;
+    divsNoDisplay--;
+    document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
+    document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
+}
 
 
 function derrota(){
