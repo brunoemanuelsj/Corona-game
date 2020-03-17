@@ -89,7 +89,6 @@ function start_game(){
 }
 
 function deleteDiv(idds){
-    document.getElementById('audioPop').pause();
     document.getElementById('audioPop').currentTime = 0.0;
     document.getElementById('audioPop').play();
     let element = document.getElementById(idds);
