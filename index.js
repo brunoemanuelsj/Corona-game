@@ -19,8 +19,7 @@ function start_game(){
 
     let newDiv = document.createElement('div');
     newDiv.id = idd;
-    newDiv.setAttribute('onclick', `deleteDiv(${idd})`);
-    idd++;
+    // newDiv.setAttribute('onclick', `deleteDiv(${idd})`);
     newDiv.style.width = Math.ceil((Math.random() * 90) + 60)  + "px";
     newDiv.style.height = newDiv.style.width;
     newDiv.style.backgroundRepeat = "no-repeat";
@@ -33,7 +32,16 @@ function start_game(){
     newDiv.style.position = "absolute";
     divsNoDisplay++;
     document.getElementById("screen").appendChild(newDiv);
-    
+    document.getElementById(idd).addEventListener('mousedown', e => {
+        e.target.style.display = "none";
+        // element.parentNode.removeChild(element);
+        pontos++;
+        divsNoDisplay--;
+        document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
+        document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
+    });
+    idd++;
+
     if(tempoSpam > 100){
         tempoSpam -= decrease;
     }
@@ -55,7 +63,7 @@ function start_game(){
     if(divsNoDisplay == 15 && flag){
         document.getElementById('audioCardi').volume = 0.5;
         document.getElementById('audioCardi').play();
-        // tempoSpam = 300;
+        tempoSpam = 300;
         flag = false;
     }
 
@@ -64,7 +72,7 @@ function start_game(){
     if(divsNoDisplay == 50){
         clearInterval(jogo);
         for(let i = "1"; i < idd; i++){
-            console.log("i = ", i);
+            // console.log("i = ", i);
             let element = document.getElementById(i);
             element.removeAttribute("onclick");
             element.style.animationName = "fadeAway";
@@ -76,15 +84,15 @@ function start_game(){
     }
 }
 
-function deleteDiv(idds){
-    let element = document.getElementById(idds);
-    element.style.display = "none";
-    // element.parentNode.removeChild(element);
-    pontos++;
-    divsNoDisplay--;
-    document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
-    document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
-}
+// function deleteDiv(idds){
+//     let element = document.getElementById(idds);
+//     element.style.display = "none";
+//     // element.parentNode.removeChild(element);
+//     pontos++;
+//     divsNoDisplay--;
+//     document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
+//     document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
+// }
 
 
 function derrota(){
@@ -98,7 +106,7 @@ function derrota(){
     document.getElementById("ptnfinal").style.display = "block";
     document.getElementById("btn_fim").style.display = "block";
 
-    for(let i = "1"; i <= idd; i++){ 
+    for(let i = "1"; i < idd; i++){ 
         let element = document.getElementById(i);
         element.parentNode.removeChild(element);
     }
