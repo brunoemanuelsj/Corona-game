@@ -7,12 +7,15 @@ var decrease = 50;
 var flag = true;
 
 function start(){
+    document.getElementById('audioBtn').play();
     document.getElementById("start").style.display = "none";
     document.getElementById("screen").style.display = "block";
     jogo = setInterval(start_game, tempoSpam);
     document.getElementById("pontos").style.display = "block";
     document.getElementById("virus-ativos").style.display = "block";
-
+    document.getElementById('audioMine').volume = 0.8;
+    document.getElementById('audioMine').play();
+    document.getElementById('audioPop').volume = 0.07;
 }
 
 function start_game(){
@@ -86,6 +89,7 @@ function start_game(){
 }
 
 function deleteDiv(idds){
+    document.getElementById('audioPop').play();
     let element = document.getElementById(idds);
     element.style.display = "none";
     // element.parentNode.removeChild(element);
@@ -100,12 +104,11 @@ function derrota(){
     document.getElementById("pontos").style.display = "none";
     document.getElementById("virus-ativos").style.display = "none";
     document.getElementById("derrota").style.display = "block";
-    document.getElementById('derrota-audio').volume = 0.1;
-    document.getElementById("derrota-audio").play();
     document.getElementById("body").style.backgroundColor = "black";
     document.getElementById('ptnfinal').innerHTML = `PONTOS:  ${pontos}`;
     document.getElementById("ptnfinal").style.display = "block";
     document.getElementById("btn_fim").style.display = "block";
+    setTimeout(attrBtnfim, 1600);
 
     for(let i = "1"; i < idd; i++){ 
         let element = document.getElementById(i);
@@ -113,8 +116,12 @@ function derrota(){
     }
 }
 
+function attrBtnfim() {
+    document.getElementById("btn_fim").setAttribute('onclick', "inicio()")
+}
 
 function inicio(){
+    document.getElementById('audioBtn').play();
     tempoSpam = 1000;
     jogo;
     divsNoDisplay = 0;
@@ -135,7 +142,8 @@ function inicio(){
     document.getElementById("derrota").style.display = "none";
     document.getElementById("ptnfinal").style.display = "none";
     document.getElementById("btn_fim").style.display = "none";
-    document.getElementById('derrota-audio').pause();
-    document.getElementById('derrota-audio').currentTime = 0.0;
     document.getElementById("body").style.backgroundColor = "#ddc49f";
+    document.getElementById('audioMine').pause();
+    document.getElementById('audioMine').currentTime = 0.0;
+    document.getElementById("btn_fim").removeAttribute("onclick");
 }
