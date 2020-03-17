@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html,body{
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #ddc49f;
+}
+
+.start {
+    position: absolute;
+    display: block;
+    margin-left: calc(50% - 150px);
+    width: 300px;
+    height: 500px;
+    margin-top: 30px;
+}
+
+img{
+    width: 100%;
+}
+
+.btn_start {
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: rgb(101, 222, 241);
+    border-radius: 30px;
+    border: solid 3px rgb(34, 113, 125);
+    margin-top: 50px;
+}
+
+.btn_start:hover{
+    background-color: cadetblue;
+}
+
+.screen {
+    font-size: 1.1em;
+    font-family: Roboto;
+    font-weight: 700;
+    overflow: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fadeAway{
+    0%{opacity: 1;}
+    10%{opacity: 0.9;}
+    20%{opacity: 0.8;}
+    30%{opacity: 0.7;}
+    40%{opacity: 0.6;}
+    50%{opacity: 0.5;}
+    60%{opacity: 0.4;}
+    70%{opacity: 0.3;}
+    80%{opacity: 0.2;}
+    90%{opacity: 0.1;}
+    100%{opacity: 0;}
+}
+
+
+
+.derrota{
+    display: none;
+    position: absolute;
+    color: red;
+    margin-left: calc(50% - 77px);
+    margin-top: 100px;
+    width: 153px;
+    height: auto;
+    font-size: 2em;
+    font-family: Roboto;
+}
+
+.ptnfinal{
+    text-align: center;
+    display: none;
+    position: absolute;
+    color: white;
+    margin-left: calc(50% - 125px);
+    margin-top: 300px;
+    width: 250px;
+    height: auto;
+    font-size: 2em;
+    font-family: Roboto;
+}
+
+.btn_fim {
+    display: none;
+    color: black;
+    position: absolute;
+    font-size: 2em;
+    width: 200px;
+    font-weight: bold;
+    margin-left: calc(50% - 100px);
+    margin-top: 500px;
+    background-color: #8bdcd3;
+    border-radius: 30px;
+    border: solid 3px rgb(34, 113, 125);
+}
