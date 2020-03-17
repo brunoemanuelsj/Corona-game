@@ -50,7 +50,7 @@ function start_game(){
     jogo = setInterval(start_game, tempoSpam);
 
     document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
-    document.getElementById('virus-ativos').innerHTML = `VIRUS ATIVOS:  ${divsNoDisplay}`;
+    document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
     
     if(divsNoDisplay == 15 && flag){
         document.getElementById('audioCardi').volume = 0.5;
@@ -83,7 +83,7 @@ function deleteDiv(idds){
     pontos++;
     divsNoDisplay--;
     document.getElementById('pontos').innerHTML = `PONTOS:  ${pontos}`;
-    document.getElementById('virus-ativos').innerHTML = `VIRUS ATIVOS:  ${divsNoDisplay}`;
+    document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  ${divsNoDisplay}`;
 }
 
 
@@ -118,7 +118,7 @@ function inicio(){
     document.getElementById("screen").style.display = "none";
     clearInterval(jogo);
     document.getElementById('pontos').innerHTML = `PONTOS:  0`;
-    document.getElementById('virus-ativos').innerHTML = `VIRUS ATIVOS:  0`;
+    document.getElementById('virus-ativos').innerHTML = `VÍRUS ATIVOS:  0`;
     document.getElementById('audioCardi').pause();
     document.getElementById('audioCardi').currentTime = 0.0;
     document.getElementById("pontos").style.display = "none";
