@@ -49,6 +49,14 @@ img{
     height: 100%;
 }
 
+.pontos{
+    margin-left: 10px;
+}
+
+.virus-ativos{
+    margin-left: 10px;
+}
+
 @keyframes fadeAway{
     0%{opacity: 1;}
     10%{opacity: 0.9;}
