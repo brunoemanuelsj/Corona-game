@@ -1,10 +1,10 @@
-var tempoSpam = 1000;
-var jogo;
-var divsNoDisplay = 0;
-var pontos = 0;
-var idd = 1;
-var decrease = 50;
-var flag = true;
+let tempoSpam = 1000;
+let jogo;
+let divsNoDisplay = 0;
+let pontos = 0;
+let idd = 1;
+let decrease = 50;
+let flag = true;
 
 function start(){
     document.getElementById('audioBtn').play();
